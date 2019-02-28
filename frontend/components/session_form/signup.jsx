@@ -63,7 +63,7 @@ class Signup extends React.Component {
             />
           </div>
 
-            <input type="text"
+            <input type="email"
               value={this.state.email}
               onChange={this.handleInput('email')}
               placeholder="Your current email address"

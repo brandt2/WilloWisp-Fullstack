@@ -49,7 +49,9 @@ class Login extends React.Component{
       <div className="login-session-form">
         <form>
           <h2>Log in to Will-o'-Wisp</h2>
-
+          <br/>
+          {this.renderErrors()}
+          <br/>
           <input type="text"
             value={this.state.username}
             onChange={this.handleInput('username')}
@@ -63,8 +65,6 @@ class Login extends React.Component{
             placeholder="Password"
             className="login-password"
           />
-
-          {this.renderErrors()}
 
           <button className="login" onClick={this.handleSubmit}>Log In</button>
 
