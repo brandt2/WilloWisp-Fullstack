@@ -5,13 +5,15 @@ export default ({ currentUser, logout }) => {
   const display = currentUser ? (
     <ul className="header-list">
       <li><p>Hello, {currentUser.username}</p></li>
-      <li><button onClick={logout}>Log Out</button></li>
+      <div className="logout-button-div">
+        <li><button className="logout-button" onClick={logout}>Log Out</button></li>
+      </div>
     </ul>
   ) : (
     <ul className="header-list">
       <li><Link className="login-button" to="/login">Log In</Link></li>
       <div className="signup-button-div">
-        <li className="signup-button" ><Link to="/signup">Sign Up</Link></li>
+          <li><Link className="signup-button" to="/signup">Sign Up</Link></li>
       </div>
     </ul>
   );

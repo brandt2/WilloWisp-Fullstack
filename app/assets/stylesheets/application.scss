@@ -20,20 +20,12 @@ html, body, div {
   font-family: sans-serif;
 }
 
-#root > div {
-  position: relative;
-}
-
 .header {
   width: 100%;
   position: fixed;
   background: rgba(0,0,0,.25);
   height: 64px;
   padding: 0 24px;
-}
-
-.header a {
-  display: block;
 }
 
 .header-navbar {
@@ -53,6 +45,7 @@ html, body, div {
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   display: flex;
+  align-items: center;
 }
 
 .header-list > li {
@@ -66,7 +59,10 @@ html, body, div {
 
 .signup-button-div {
   margin-right: 48px;
-  padding-top: 16px;
+}
+
+.logout-button-div {
+  margin-right: 48px;
 }
 
 .signup-button {
@@ -79,6 +75,13 @@ html, body, div {
 .signup-button:hover {
   transition: 0.2s;
   color: gray;
+}
+
+.logout-button {
+  background: rgb(255, 255, 255);
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .splash {
@@ -95,6 +98,7 @@ html, body, div {
 
 .splash-box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 640px;
@@ -103,25 +107,21 @@ html, body, div {
 }
 
 .splash-box > h1 {
-  position: absolute;
   justify-self: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 48px;
   font-weight: 600;
   color: rgb(255, 255, 255);
-  top: 0;
   text-align: center;
   margin-top: 37.520px;
   margin-bottom: 5px;
 }
 
 .splash-box > h3 {
-  position: absolute;
   font-family: 'Montserrat', sans-serif;
   font-size: 22px;
   font-weight: 600;
   color: rgb(255, 255, 255);
-  top: 100px;
   width: 640px;
   text-align: center;
   margin-top: 26px;
@@ -129,15 +129,13 @@ html, body, div {
 }
 
 .sign-up {
-  position: absolute;
   background: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 22px;
-  padding: 20px 60px;
+  padding: 18.5px 55.5px;
   border-radius: 3px;
   text-align: center;
-  bottom: 0;
 }
 
 .sign-up:hover {
