@@ -22,18 +22,15 @@
 }
 
 .signup-session-form > form > h2 {
-  position: absolute;
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  top: 50px;
 }
 
 .signup-name {
-  position: absolute;
-  top: 120px;
   display: flex;
   justify-content: space-evenly;
   width: 350px;
+  margin-bottom: 10px;
 }
 
 .firstname {
@@ -45,21 +42,18 @@
 }
 
 .email {
-  position: absolute;
-  top: 170px;
   width: 295px;
+  margin-bottom: 10px;
 }
 
 .username {
-  position: absolute;
-  top: 220px;
   width: 295px;
+  margin-bottom: 10px;
 }
 
 .password {
-  position: absolute;
-  top: 270px;
   width: 295px;
+  margin-bottom: 10px;
 }
 
 input[type="password"], input[type="text"] {
@@ -68,7 +62,6 @@ input[type="password"], input[type="text"] {
 }
 
 .signup-session-form > form > button {
-  position: absolute;
   bottom: 10px;
   display: block;
   width: 224px;
@@ -82,4 +75,10 @@ input[type="password"], input[type="text"] {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 30px;
+}
+
+.signup-errors {
+  text-align: center;
+  color: red;
+  font-family: 'Montserrat', sans-serif;
 }
