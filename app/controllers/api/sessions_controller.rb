@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       # need to specfify route so it knows where to get the user data from
       render "/api/users/show"
     else
-      render json: ["Invalid Credentials"], status: 401
+      render json: ["Invalid Credentials. Please try again."], status: 401
     end
   end
 

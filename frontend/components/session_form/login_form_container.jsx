@@ -5,7 +5,7 @@ import Login from './login';
 
 const mapStateToProps = state => {
   return ({
-    errors: state.errors.login
+    errors: state.errors.session
   });
 };
 

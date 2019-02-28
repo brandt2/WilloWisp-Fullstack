@@ -25,6 +25,18 @@ class Login extends React.Component{
       .then(() => this.props.history.push("/"));
   }
 
+  renderErrors() {
+    return (
+      <ul className="login-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   handleDemo(e){
     e.preventDefault();
     const user = Object.assign({}, {username: "demo", password: "password"});
@@ -51,6 +63,8 @@ class Login extends React.Component{
             placeholder="Password"
             className="login-password"
           />
+
+          {this.renderErrors()}
 
           <button className="login" onClick={this.handleSubmit}>Log In</button>
 
