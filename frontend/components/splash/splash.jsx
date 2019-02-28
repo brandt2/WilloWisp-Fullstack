@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 
 export default () => (
   <div className="splash">
-    <h1 className="splash-tagline">Find your inspiration.</h1>
-    <br/>
-    <h2 className="splash-description">Join the Will-o'-Wisp community, and ignite your passions.</h2>
-    <br/>
-    <Link to="/signup" className="sign-up">Sign Up</Link>
+    <div className="splash-box">
+      <h1 className="splash-tagline">Find your inspiration.</h1>
+      <br/>
+      <h3 className="splash-description">Join the Will-o'-Wisp community, home to billions of photos.</h3>
+      <br/>
+      <Link to="/signup" className="sign-up">Sign Up</Link>
+    </div>
   </div>
 )
