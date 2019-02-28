@@ -1,0 +1,93 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html, body, div {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#root > div {
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.25);
+  height: 64px;
+  padding: 0 24px;
+}
+
+.header a {
+  display: block;
+}
+
+.header-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 64px;
+  color: white;
+}
+
+.header-list {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+}
+
+.header-list > li {
+  margin-right: 24px;
+  line-height: 64px;
+}
+
+.login-button {
+  color: white;
+}
+
+.signup-button-div {
+  margin-right: 48px;
+  padding-top: 16px;
+}
+
+.signup-button {
+  background: white;
+  padding: 8px 20px;
+  border-radius: 3px;
+}
+
+.splash {
+  background-image: image_url("tree.jpg");
+  background-size: cover;
+  min-height: 1150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+    h1 {
+      font-family: 'Montserrat', helvetica neue,helvetica,arial, sans-serif;
+      height: 100%;
+      z-index: 1;
+      color: white;
+      text-shadow: 1px 1px 15px black;
+      text-align: center;
+      width: 100%;
+    }
+}
