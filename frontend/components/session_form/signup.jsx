@@ -14,6 +14,10 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.removeErrors()
+  }
+
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.currentTarget.value });

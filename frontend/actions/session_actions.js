@@ -4,6 +4,7 @@ import * as UserAPIUtil from '../util/user_api_util';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const REMOVE_ERRORS = "REMOVE_ERRORS"
 
 const receiveCurrentUser = (currentUser) => {
   return({
@@ -19,10 +20,15 @@ const logoutCurrentUser = () => {
 }
 
 const receiveErrors= (errors) => {
-  // debugger
   return({
     type: RECEIVE_SESSION_ERRORS,
     errors
+  })
+}
+
+export const removeErrors = () => {
+  return ({
+    type: REMOVE_ERRORS
   })
 }
 
