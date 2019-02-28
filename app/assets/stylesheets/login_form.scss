@@ -1,0 +1,71 @@
+.login-session-form {
+  background-image: image_url("tree.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-session-form > form {
+  height: 312px;
+  width: 272px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  position: relative;
+  border-radius: 4px;
+}
+
+.login-session-form > form > h2 {
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  top: 30px;
+}
+
+input[type="password"], input[type="text"] {
+  border: 1px solid rgb(167, 167, 167);
+  padding: 10px;
+  width: 224px;
+  border-radius: 4px;
+}
+
+.login-username {
+  position: absolute;
+  top: 80px;
+}
+
+.login-password {
+  position: absolute;
+  top: 150px;
+}
+
+.login-session-form > form > button {
+  display: block;
+  width: 224px;
+  height: 24px;
+  background: rgb(18, 143, 220);
+  padding: 8px 24px;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.login {
+  position: absolute;
+  bottom: 80px;
+}
+
+.demo-login {
+  position: absolute;
+  bottom: 20px;
+}

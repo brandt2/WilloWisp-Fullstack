@@ -29,7 +29,7 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="session-form">
+      <div className="signup-session-form">
         <h2>Sign Up!</h2>
         <br/>
         <form>
