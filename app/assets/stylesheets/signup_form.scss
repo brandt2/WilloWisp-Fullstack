@@ -1,7 +1,10 @@
 .signup-session-form {
+  background-image: image_url("tree.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
   height: 100vh;
-  background: rgb(249, 249, 250);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,8 +31,8 @@
 
 .signup-name {
   display: flex;
-  justify-content: space-evenly;
-  width: 350px;
+  justify-content: space-between;
+  width: 290px;
   margin-bottom: 10px;
 }
 
@@ -42,29 +45,30 @@
 }
 
 .email {
-  width: 295px;
+  width: 280px;
   margin-bottom: 10px;
 }
 
 .username {
-  width: 295px;
+  width: 280px;
   margin-bottom: 10px;
 }
 
 .password {
-  width: 295px;
-  margin-bottom: 10px;
+  width: 280px;
+  margin-bottom: 20px;
 }
 
 input[type="password"], input[type="text"], input[type="email"] {
-  border-bottom: 1px solid rgb(167, 167, 167);
+  border: 1px solid rgb(167, 167, 167);
   padding: 5px;
+  border-radius: 4px;
 }
 
 .signup-session-form > form > button {
   bottom: 10px;
   display: block;
-  width: 224px;
+  width: 245px;
   height: 24px;
   background: rgb(18, 143, 220);
   padding: 8px 24px;
