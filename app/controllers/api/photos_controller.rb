@@ -3,7 +3,6 @@ class Api::PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
-    render :index
   end
 
   def show
@@ -18,14 +17,26 @@ class Api::PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     @photo.owner_id = current_user.id
+    if @photo.save
+      render :show
+    else
+      render json: @photo.errors.full_messages, status: 422
+    end
   end
 
   def update
-    
+    @photo = current_user.photos.find(params[:id])
+    if @photo.update(photo_params)
+      render :show
+    else
+      render json: @photo.errors.full_messages, status: 404
+    end
   end
 
   def destroy
-    
+    @photo = current_user.photos.find(params[:id])
+    @photo.destroy
+    render :index
   end
 
   private
