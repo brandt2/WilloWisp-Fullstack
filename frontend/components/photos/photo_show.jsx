@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 
 class PhotoShow extends React.Component {
 
