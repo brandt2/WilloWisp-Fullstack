@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import PhotoIndexContainer from './photos/photo_index_container';
 import Splash from './splash/splash';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -12,6 +13,7 @@ const App = () => (
     <Route exact path ="/" component={Splash} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    <Route path="/photos" component={PhotoIndexContainer} />
   </div>
 );
 
