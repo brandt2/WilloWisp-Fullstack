@@ -19,7 +19,7 @@ const logoutCurrentUser = () => {
   })
 }
 
-const receiveErrors= (errors) => {
+const receiveErrors = (errors) => {
   return({
     type: RECEIVE_SESSION_ERRORS,
     errors
