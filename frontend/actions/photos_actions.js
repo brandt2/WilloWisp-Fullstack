@@ -48,17 +48,17 @@ export const fetchPhoto = (id) => dispatch => {
   )
 }
 
-export const createPhoto = (photoForm) => dispatch => {
+export const createPhoto = (photo) => dispatch => {
   return (
-    PhotoAPIUtil.createPhoto(photoForm)
+    PhotoAPIUtil.createPhoto(photo)
       .then( (photo) => dispatch(receivePhoto(photo)))
       .fail( error => dispatch(receiveErrors(error.responseJSON)))
   )
 }
 
-export const updatePhoto = (photoForm) => dispatch => {
+export const updatePhoto = (photo) => dispatch => {
   return (
-    PhotoAPIUtil.updatePhoto(photoForm)
+    PhotoAPIUtil.updatePhoto(photo)
       .then( (photo) => dispatch(receivePhoto(photo)))
       .fail( error => dispatch(receiveErrors(error.responseJSON)))
   )

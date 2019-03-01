@@ -4,30 +4,31 @@ export const fetchPhotos = () => {
     method: "GET",
     url: "/api/photos"
   })
-}
+};
 
 export const fetchPhoto = (id) => {
   return $.ajax({
     method: "GET",
     url: `/api/photos/${id}`
   })
-}
+};
 
-export const createPhoto = (photoForm) => {
+export const createPhoto = (photo) => {
+  // debugger
   return $.ajax({
     method: "POST",
-    url: `/api/photos`,
-    data: { photoForm }
+    url: '/api/photos',
+    data: { photo }
   })
-}
+};
 
-export const updatePhoto = (photoForm) => {
+export const updatePhoto = (photo) => {
   return $.ajax({
     method: "PATCH",
-    url: `/api/photos/${photoForm.id}`,
-    data: { photoForm }
+    url: `/api/photos/${photo.id}`,
+    data: { photo }
   })
-}
+};
 
 export const deletePhoto = (photoId) => {
   return $.ajax({
@@ -35,3 +36,10 @@ export const deletePhoto = (photoId) => {
     url: `/api/photos/${photoId}`
   })
 }
+
+// testing
+window.createPhoto = createPhoto
+window.fetchPhoto = fetchPhoto;
+window.fetchPhotos = fetchPhotos;
+window.updatePhoto = updatePhoto;
+window.deletePhoto = deletePhoto;

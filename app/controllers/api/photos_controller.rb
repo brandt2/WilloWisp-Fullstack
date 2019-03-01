@@ -6,7 +6,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def show
-    @photo = Photo.find([params[:id]])
+    @photo = Photo.find(params[:id])
     if @photo
       render :show
     else
@@ -36,7 +36,9 @@ class Api::PhotosController < ApplicationController
   def destroy
     @photo = current_user.photos.find(params[:id])
     @photo.destroy
-    render :index
+    render json: { message: 'Delete Successful' }
+    # cannot render the index because index takes in @photos not @photo
+    # render :index
   end
 
   private
