@@ -3,10 +3,11 @@ import PhotoShow from './photo_show';
 import { fetchPhoto } from '../../actions/photos_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let photoId = ownProps.match.params.photoId;
-  let photo = state.entities.photos[photoId];
+  // let photoId = ownProps.match.params.photoId;
+  // let photo = state.entities.photos[photoId];
   return ({
-    photo: photo
+    photo: state.entities.photos[ownProps.match.params.photoId],
+    photoId: ownProps.match.params.photoId
   });
 }
 
