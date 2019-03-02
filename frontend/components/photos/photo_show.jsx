@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 class PhotoShow extends React.Component {
 
   componentDidMount(){
-    console.log("mounted")
-    // let photoId = this.props.match.params.photoId;
     this.props.fetchPhoto(this.props.photoId);
   }
 
@@ -39,6 +37,7 @@ class PhotoShow extends React.Component {
       <div>
         <h1>{this.props.photo.title}</h1>
         <h1>{this.props.photo.description}</h1>
+        <img src={this.props.photo.photoUrl} alt="" />
         <Link to="/photos">go back to the index</Link>
       </div>
     )

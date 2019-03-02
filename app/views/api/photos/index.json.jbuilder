@@ -8,10 +8,3 @@
     end
   end
 end
-
-# json.array! @photos do |photo|
-#   json.set! photo.id do
-#     json.extract! photo, :id, :title, :description, :owner_id
-#   end
-#   # json.photoUrl url_for(photo.photo)
-# end
