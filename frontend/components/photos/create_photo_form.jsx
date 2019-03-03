@@ -8,6 +8,7 @@ class CreatePhotoForm extends React.Component{
       title: '',
       description: '',
       photoFile: null,
+      photoUrl: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +22,14 @@ class CreatePhotoForm extends React.Component{
   }
 
   handleFile(e){
-    this.setState({ photoFile: e.currentTarget.files[0]});
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result});
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   // handleSubmit(e){
@@ -36,7 +44,9 @@ class CreatePhotoForm extends React.Component{
     const formData = new FormData();
     formData.append('photo[title]', this.state.title)
     formData.append('photo[description]', this.state.description)
-    formData.append('photo[image]', this.state.photoFile)
+    if (this.state.photoFile){
+      formData.append('photo[image]', this.state.photoFile)
+    }
     this.props.createPhoto(formData)
       .then( () => this.props.history.push("/photos"))
   }
@@ -54,6 +64,7 @@ class CreatePhotoForm extends React.Component{
   }
 
   render() {
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
       <div>
         <form>
@@ -75,6 +86,9 @@ class CreatePhotoForm extends React.Component{
             <input type="file"
               onChange={this.handleFile}
             />
+
+            <h3>image preview</h3>
+            {preview}
 
             <button onClick={this.handleSubmit}>Upload photo</button>
         </form>
