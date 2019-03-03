@@ -17,8 +17,10 @@ export const createPhoto = (photo) => {
   return $.ajax({
     method: "POST",
     url: '/api/photos',
-    data: { photo }
-  })
+    data: photo,
+    contentType: false,
+    processData: false
+  });
 };
 
 export const updatePhoto = (photo) => {

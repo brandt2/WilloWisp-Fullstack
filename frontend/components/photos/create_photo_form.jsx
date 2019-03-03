@@ -7,9 +7,11 @@ class CreatePhotoForm extends React.Component{
     this.state = {
       title: '',
       description: '',
+      photoFile: null,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   handleInput(type){
@@ -18,10 +20,24 @@ class CreatePhotoForm extends React.Component{
     }
   }
 
+  handleFile(e){
+    this.setState({ photoFile: e.currentTarget.files[0]});
+  }
+
+  // handleSubmit(e){
+  //   e.preventDefault();
+  //   const photo = Object.assign({}, this.state);
+  //   this.props.createPhoto(photo)
+  //     .then( () => this.props.history.push("/photos"))
+  // }
+
   handleSubmit(e){
     e.preventDefault();
-    const photo = Object.assign({}, this.state);
-    this.props.createPhoto(photo)
+    const formData = new FormData();
+    formData.append('photo[title]', this.state.title)
+    formData.append('photo[description]', this.state.description)
+    formData.append('photo[image]', this.state.photoFile)
+    this.props.createPhoto(formData)
       .then( () => this.props.history.push("/photos"))
   }
 
@@ -54,6 +70,10 @@ class CreatePhotoForm extends React.Component{
               value={this.state.description}
               onChange={this.handleInput('description')}
               placeholder="Description"
+            />
+
+            <input type="file"
+              onChange={this.handleFile}
             />
 
             <button onClick={this.handleSubmit}>Upload photo</button>
