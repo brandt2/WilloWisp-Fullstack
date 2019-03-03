@@ -5,14 +5,14 @@ export default ({ currentUser }) => {
   const display = currentUser ? (
     <ul className="second-navbar">
       <li><Link className="to-index" to="/photos">Photos</Link></li>
-      <li>People</li>
-      <li>Groups</li>
+      {/* <li>People</li> */}
+      {/* <li>Groups</li> */}
     </ul>
   ) : (
       <ul className="second-navbar">
-        <li>All Activity</li>
-        <li>People</li>
-        <li>Groups</li>
+        {/* <li>All Activity</li> */}
+        {/* <li>People</li> */}
+        {/* <li>Groups</li> */}
       </ul>
     );
 
