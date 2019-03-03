@@ -5,15 +5,17 @@ class EditPhotoForm extends React.Component{
     super(props);
 
     this.state = {
+      id: this.props.photo.id,
       title: this.props.photo.title,
       description: this.props.photo.description
-    }
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount(){
-    this.props.fetchPhoto(this.props.photoId);
+    let photoId = this.props.match.params.photoId
+    this.props.fetchPhoto(photoId);
   }
 
   handleInput(type){
@@ -26,7 +28,7 @@ class EditPhotoForm extends React.Component{
     e.preventDefault();
     const photo = Object.assign({}, this.state);
     this.props.updatePhoto(photo)
-      .then( () => this.props.history.push("/photos"))
+      .then( () => this.props.history.push(`/photos/${photo.id}`))
   }
 
   renderErrors(){
@@ -42,6 +44,7 @@ class EditPhotoForm extends React.Component{
   }
 
   render(){
+    // debugger
     return (
       <div>
         <form>
@@ -51,11 +54,13 @@ class EditPhotoForm extends React.Component{
           <input type="text"
             value={this.state.title}
             onChange={this.handleInput('title')}
+            placeholder={this.props.photo.title}
           />
 
           <input type="text"
             value={this.state.description}
             onChange={this.handleInput('description')}
+            placeholder={this.props.photo.description}
           />
 
           <button onClick={this.handleSubmit}>Edit photo</button>
