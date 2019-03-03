@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
     <ul className="header-list">
-      <li><Link className="login-button" to="/photos/new"><i class="fas fa-cloud-upload-alt"></i></Link></li>
+      <li><Link className="upload-button" to="/photos/new">upload</Link></li>
       <li><p>Hello, {currentUser.username}</p></li>
       <div className="logout-button-div">
         <li><button className="logout-button" onClick={logout}>Log Out</button></li>
