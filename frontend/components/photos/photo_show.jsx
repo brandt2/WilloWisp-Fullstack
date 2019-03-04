@@ -32,12 +32,26 @@ class PhotoShow extends React.Component {
   // }
 
   render () {
+    // let prev = this.props.photo.id;
+    // if (prev - 1 > 0) {
+    //   prev -= 1;
+    //   prev;
+    // }
+
+    // let next = this.props.photo.id;
+    // if (next < this.props.totalImages){
+    //   next += 1;
+    //   next;
+    // }
+
     if (this.props.photo === undefined) return null;
     return (
       <div>
         <div className="photo-show-image-div">
           <div className="back-to-index">
             <Link to="/photos"><i class="fas fa-arrow-left"></i> Back to index</Link>
+            {/* <Link to={`/photos/${prev}`}><i class="fas fa-arrow-left"></i> back 1 image</Link>
+            <Link to={`/photos/${next}`}><i class="fas fa-arrow-left"></i> move up image</Link> */}
           </div>
           <img className="photo-show-image" src={this.props.photo.photoUrl} alt="" />
         </div>
