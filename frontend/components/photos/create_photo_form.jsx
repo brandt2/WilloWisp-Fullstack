@@ -53,7 +53,7 @@ class CreatePhotoForm extends React.Component{
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="login-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -64,40 +64,41 @@ class CreatePhotoForm extends React.Component{
   }
 
   render() {
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
+    const preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl} /> : null;
     return (
       <div className="upload-photo-div">
         <form className="upload-photo-form">
-          <h2>Upload Photo</h2>
-          <br/>
-          {this.renderErrors()}
           <div className="upload-photo-field">
+            {this.renderErrors()}
             <input type="text"
+            className="create-photo-title"
               value={this.state.title}
               onChange={this.handleInput('title')}
-              placeholder="Title"
+              placeholder="Add a title"
             />
 
             <input type="text"
+            className="create-photo-description"
               value={this.state.description}
               onChange={this.handleInput('description')}
-              placeholder="Description"
+              placeholder="Add a description"
             />
+
+            <button className="upload-buttons" onClick={this.handleSubmit}>Upload photo</button>
           </div>
 
           <div className="upload-photo-photo">
-            <div>Choose Photo</div>
+            <div className="fake-button">Choose photos to upload</div>
 
             <input type="file"
-              className="upload-buttons"
+              className="choose-file"
               onChange={this.handleFile}
             />
 
-            <h3>image preview</h3>
             {preview}
           </div>
 
-            <button onClick={this.handleSubmit}>Upload photo</button>
+            {/* <button onClick={this.handleSubmit}>Upload photo</button> */}
         </form>
       </div>
     )

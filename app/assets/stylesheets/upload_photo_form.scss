@@ -1,6 +1,6 @@
 .upload-photo-div {
   background: rgb(45, 45, 45);
-  height: 82vh;
+  height: 100vh;
 }
 
 .upload-photo-form {
@@ -9,20 +9,63 @@
 }
 
 .upload-photo-field {
+  width: 232px;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgb(37, 37, 37);
+}
+
+.create-photo-title {
+  margin: 10px 0 10px 0;
+}
+
+.create-photo-description {
+  margin: 10px 0 20px 0;
 }
 
 .upload-buttons {
-  background: aqua;
-  border: 2px solid black;
+  background: rgb(0, 99, 220);
+  color: white;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 700;
 }
 
- .upload-buttons::-webkit-file-upload-button {
+.upload-photo-photo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.fake-button {
+  position: absolute;
+  color: white;
+  background: rgb(0, 99, 220);
+  padding: 11px 90.14px;
+  border-radius: 4px;
+  width: 201px;
+  top: 80px;
+  right: 0;
+}
+
+ .choose-file::-webkit-file-upload-button {
   visibility: hidden;
 }
 
 input[type='file'] {
+  position: absolute;
   color: transparent;
+  padding: 10px;
+  background: transparent;
+  top: 80px;
+  right: 0;
 }
 
+.preview-image {
+  z-index: 1;
+}
