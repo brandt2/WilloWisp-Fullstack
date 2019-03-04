@@ -45,24 +45,31 @@ class EditPhotoForm extends React.Component{
 
   render(){
     return (
-      <div>
-        <form>
-          <h2>Edit Photo</h2>
-          <br />
-          {this.renderErrors()}
-          <input type="text"
-            value={this.state.title}
-            onChange={this.handleInput('title')}
-            placeholder={this.props.photo.title}
-          />
+      <div className="upload-photo-div">
+        <form className="upload-photo-form">
+          <div className="upload-photo-field">
+            {this.renderErrors()}
+            <input type="text"
+              className="create-photo-title"
+              value={this.state.title}
+              onChange={this.handleInput('title')}
+              placeholder={this.props.photo.title}
+            />
 
-          <input type="text"
-            value={this.state.description}
-            onChange={this.handleInput('description')}
-            placeholder={this.props.photo.description}
-          />
+            <input type="text"
+              className="create-photo-description"
+              value={this.state.description}
+              onChange={this.handleInput('description')}
+              placeholder={this.props.photo.description}
+            />
 
-          <button onClick={this.handleSubmit}>Edit photo</button>
+            <button className="upload-buttons" onClick={this.handleSubmit}>Edit photo</button>
+          </div>
+          
+          <div className="upload-photo-photo">
+            <img className="preview-image" src={this.props.photo.photoUrl} />
+          </div>
+
         </form>
       </div>
     )

@@ -71,14 +71,14 @@ class CreatePhotoForm extends React.Component{
           <div className="upload-photo-field">
             {this.renderErrors()}
             <input type="text"
-            className="create-photo-title"
+              className="create-photo-title"
               value={this.state.title}
               onChange={this.handleInput('title')}
               placeholder="Add a title"
             />
 
             <input type="text"
-            className="create-photo-description"
+              className="create-photo-description"
               value={this.state.description}
               onChange={this.handleInput('description')}
               placeholder="Add a description"
