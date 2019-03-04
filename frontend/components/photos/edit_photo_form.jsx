@@ -67,6 +67,12 @@ class EditPhotoForm extends React.Component{
           </div>
           
           <div className="upload-photo-photo">
+            <div className="fake-button">Choose photos to upload</div>
+
+            <input type="file"
+              className="choose-file"
+              onChange={this.handleFile}
+            />
             <img className="preview-image" src={this.props.photo.photoUrl} />
           </div>
 
