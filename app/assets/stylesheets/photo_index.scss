@@ -12,13 +12,15 @@ body {
 }
 
 .photos-index-div {
-  padding-top: 26px;
+  margin-top: 11px;
   position: relative;
+  color: transparent;
 }
 
 .photo-index-title {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
+  left: 10px;
 }
 
 .photo-image {
@@ -26,8 +28,9 @@ body {
   width: 256px;
 }
 
-.photo-index-title:hover {
-}
-
-.photo-image:hover {
+.photos-index-div:hover {
+  transition: 0.7s;
+  color: white;
+  background-color:#000;
+  opacity:0.95;
 }
