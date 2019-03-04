@@ -6,7 +6,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def show
-    @photo = Photo.find(params[:id])
+    @photo = Photo.includes(:user).find(params[:id])
     if @photo
       render :show
     else
