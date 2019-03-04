@@ -44,7 +44,6 @@ class EditPhotoForm extends React.Component{
   }
 
   render(){
-    // debugger
     return (
       <div>
         <form>

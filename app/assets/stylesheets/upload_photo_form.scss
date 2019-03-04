@@ -1,0 +1,28 @@
+.upload-photo-div {
+  background: rgb(45, 45, 45);
+  height: 82vh;
+}
+
+.upload-photo-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.upload-photo-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-buttons {
+  background: aqua;
+  border: 2px solid black;
+}
+
+ .upload-buttons::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type='file'] {
+  color: transparent;
+}
+

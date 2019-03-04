@@ -66,11 +66,12 @@ class CreatePhotoForm extends React.Component{
   render() {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
-      <div>
-        <form>
+      <div className="upload-photo-div">
+        <form className="upload-photo-form">
           <h2>Upload Photo</h2>
           <br/>
           {this.renderErrors()}
+          <div className="upload-photo-field">
             <input type="text"
               value={this.state.title}
               onChange={this.handleInput('title')}
@@ -82,13 +83,19 @@ class CreatePhotoForm extends React.Component{
               onChange={this.handleInput('description')}
               placeholder="Description"
             />
+          </div>
+
+          <div className="upload-photo-photo">
+            <div>Choose Photo</div>
 
             <input type="file"
+              className="upload-buttons"
               onChange={this.handleFile}
             />
 
             <h3>image preview</h3>
             {preview}
+          </div>
 
             <button onClick={this.handleSubmit}>Upload photo</button>
         </form>
