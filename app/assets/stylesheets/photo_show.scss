@@ -13,9 +13,15 @@
   left: 20px;
 }
 
-.photo-show-image {
+.photo-image-container {
+  display: flex;
+  justify-content: center;
   width: 600px;
   height: 400px;
+}
+
+.photo-show-image {
+  height: 100%;
 }
 
 .photo-info {

@@ -55,7 +55,9 @@ class PhotoShow extends React.Component {
             {/* <Link to={`/photos/${prev}`}><i class="fas fa-arrow-left"></i> back 1 image</Link>
             <Link to={`/photos/${next}`}><i class="fas fa-arrow-left"></i> move up image</Link> */}
           </div>
-          <img className="photo-show-image" src={this.props.photo.photoUrl} alt="" />
+          <div className="photo-image-container">
+            <img className="photo-show-image" src={this.props.photo.photoUrl} alt="" />
+          </div>
         </div>
         <div className="photo-info">
           <div className="photo-info-section">
