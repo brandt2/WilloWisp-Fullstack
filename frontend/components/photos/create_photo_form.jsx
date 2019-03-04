@@ -8,7 +8,8 @@ class CreatePhotoForm extends React.Component{
       title: '',
       description: '',
       photoFile: null,
-      photoUrl: null
+      photoUrl: null,
+      showForm: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,7 +26,7 @@ class CreatePhotoForm extends React.Component{
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ photoFile: file, photoUrl: fileReader.result});
+      this.setState({ photoFile: file, photoUrl: fileReader.result, showForm: true});
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -63,29 +64,34 @@ class CreatePhotoForm extends React.Component{
     );
   }
 
+
   render() {
+
+    const menuForm = this.state.showForm ? (<div className="upload-photo-field">
+      {this.renderErrors()}
+      <input type="text"
+        className="create-photo-title"
+        value={this.state.title}
+        onChange={this.handleInput('title')}
+        placeholder="Add a title"
+      />
+
+      <input type="text"
+        className="create-photo-description"
+        value={this.state.description}
+        onChange={this.handleInput('description')}
+        placeholder="Add a description"
+      /> 
+
+      <button className="upload-buttons" onClick={this.handleSubmit}>Upload photo</button>
+    </div>) : null;
+
     const preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl} /> : null;
     return (
       <div className="upload-photo-div">
         <form className="upload-photo-form">
-          <div className="upload-photo-field">
-            {this.renderErrors()}
-            <input type="text"
-              className="create-photo-title"
-              value={this.state.title}
-              onChange={this.handleInput('title')}
-              placeholder="Add a title"
-            />
 
-            <input type="text"
-              className="create-photo-description"
-              value={this.state.description}
-              onChange={this.handleInput('description')}
-              placeholder="Add a description"
-            />
-
-            <button className="upload-buttons" onClick={this.handleSubmit}>Upload photo</button>
-          </div>
+          {menuForm}
 
           <div className="upload-photo-photo">
             <div className="fake-button">Choose photos to upload</div>

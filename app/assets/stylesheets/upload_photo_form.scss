@@ -50,7 +50,7 @@
   border-radius: 4px;
   width: 201px;
   top: 80px;
-  right: 0;
+  left: -100;
 }
 
  .choose-file::-webkit-file-upload-button {
@@ -63,7 +63,7 @@ input[type='file'] {
   padding: 10px;
   background: transparent;
   top: 80px;
-  right: 0;
+  left: -190.5px;
   cursor: pointer;
 }
 
