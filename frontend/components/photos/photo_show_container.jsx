@@ -4,7 +4,6 @@ import { fetchPhoto } from '../../actions/photos_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.currentUserId];
-  debugger
   return ({
     currentUser: currentUser,
     photo: state.entities.photos[ownProps.match.params.photoId],
