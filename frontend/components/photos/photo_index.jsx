@@ -5,6 +5,7 @@ class PhotoIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos();
+    this.props.fetchUsers();
   }
 
   render () {
@@ -13,6 +14,7 @@ class PhotoIndex extends React.Component {
         < PhotoIndexItem
           key={photo.id}
           photo={photo}
+          users={this.props.users}
         />
       )
     });

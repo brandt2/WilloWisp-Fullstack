@@ -82,7 +82,7 @@ export const fetchUser = (id) => dispatch => {
 
 export const fetchUsers = () => dispatch => {
   return (
-    PhotoAPIUtil.fetchUsers()
+    UserAPIUtil.fetchUsers()
       .then((users) => dispatch(receiveAllUsers(users)))
   )
 }

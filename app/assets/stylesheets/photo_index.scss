@@ -19,8 +19,16 @@ body {
 
 .photo-index-title {
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
   left: 10px;
+}
+
+.photo-index-username {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .photo-image {
