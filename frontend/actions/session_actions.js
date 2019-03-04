@@ -72,3 +72,17 @@ export const signup = (user) => dispatch => {
       .fail(error => dispatch(receiveErrors(error.responseJSON)))
   )
 }
+
+export const fetchUser = (id) => dispatch => {
+  return(
+    UserAPIUtil.fetchUser(id)
+      .then( (user) => dispatch(receiveUser(user)))
+  )
+}
+
+export const fetchUsers = () => dispatch => {
+  return (
+    PhotoAPIUtil.fetchUsers()
+      .then((users) => dispatch(receiveAllUsers(users)))
+  )
+}
