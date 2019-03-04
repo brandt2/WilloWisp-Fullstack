@@ -10,7 +10,7 @@ export default ({ currentUser }) => {
     </ul>
   ) : (
       <ul className="second-navbar">
-        {/* <li>All Activity</li> */}
+        <li><Link className="to-index" to="/photos">Photos</Link></li>
         {/* <li>People</li> */}
         {/* <li>Groups</li> */}
       </ul>
