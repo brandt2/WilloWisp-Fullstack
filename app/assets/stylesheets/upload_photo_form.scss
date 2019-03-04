@@ -1,11 +1,14 @@
 .upload-photo-div {
   background: rgb(45, 45, 45);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .upload-photo-form {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .upload-photo-field {
@@ -43,14 +46,13 @@
 }
 
 .fake-button {
-  position: absolute;
+  position: relative;
   color: white;
   background: rgb(0, 99, 220);
   padding: 11px 90.14px;
   border-radius: 4px;
   width: 201px;
-  top: 80px;
-  left: -100;
+  display: inline-block;
 }
 
  .choose-file::-webkit-file-upload-button {
@@ -62,8 +64,10 @@ input[type='file'] {
   color: transparent;
   padding: 10px;
   background: transparent;
-  top: 80px;
-  left: -190.5px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   cursor: pointer;
 }
 

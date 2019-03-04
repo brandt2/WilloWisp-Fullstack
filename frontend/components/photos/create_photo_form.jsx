@@ -10,6 +10,7 @@ class CreatePhotoForm extends React.Component{
       photoFile: null,
       photoUrl: null,
       showForm: false,
+      buttonForm: true,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +27,7 @@ class CreatePhotoForm extends React.Component{
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ photoFile: file, photoUrl: fileReader.result, showForm: true});
+      this.setState({ photoFile: file, photoUrl: fileReader.result, buttonForm: false, showForm: true});
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -86,6 +87,18 @@ class CreatePhotoForm extends React.Component{
       <button className="upload-buttons" onClick={this.handleSubmit}>Upload photo</button>
     </div>) : null;
 
+    const buttonButton = this.state.buttonForm ? (
+    <div className="upload-photo-photo">
+      <div className="fake-button">
+        Choose photos to upload
+      <input type="file"
+        className="choose-file"
+        onChange={this.handleFile}
+      />
+      </div>
+
+    </div>) : null;
+
     const preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl} /> : null;
     return (
       <div className="upload-photo-div">
@@ -93,14 +106,9 @@ class CreatePhotoForm extends React.Component{
 
           {menuForm}
 
+          {buttonButton}
+
           <div className="upload-photo-photo">
-            <div className="fake-button">Choose photos to upload</div>
-
-            <input type="file"
-              className="choose-file"
-              onChange={this.handleFile}
-            />
-
             {preview}
           </div>
 
