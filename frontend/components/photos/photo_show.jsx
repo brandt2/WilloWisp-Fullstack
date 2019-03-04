@@ -35,10 +35,18 @@ class PhotoShow extends React.Component {
     if (this.props.photo === undefined) return null;
     return (
       <div>
-        <h1>{this.props.photo.title}</h1>
-        <h1>{this.props.photo.description}</h1>
-        <img src={this.props.photo.photoUrl} alt="" />
-        <Link to="/photos">go back to the index</Link>
+        <div className="photo-show-image-div">
+          <div className="back-to-index">
+            <Link to="/photos"><i class="fas fa-arrow-left"></i> Back to index</Link>
+          </div>
+          <img className="photo-show-image" src={this.props.photo.photoUrl} alt="" />
+        </div>
+        <div className="photo-info">
+          <div className="photo-info-section">
+            <h1 className="title">{this.props.photo.title}</h1>
+            <h2 className="description">{this.props.photo.description}</h2>
+          </div>
+        </div>
       </div>
     )
   }
