@@ -45,6 +45,8 @@ class PhotoShow extends React.Component {
     // }
 
     if (this.props.photo === undefined) return null;
+    const test = this.props.photo.owner_id === this.props.currentUserId ? <Link to={`/photos/${this.props.photo.id}/edit`}><i class="fas fa-edit"></i> Edit</Link> : null;
+
     return (
       <div>
         <div className="photo-show-image-div">
@@ -57,6 +59,7 @@ class PhotoShow extends React.Component {
         </div>
         <div className="photo-info">
           <div className="photo-info-section">
+            {test}
             <h1 className="title">{this.props.photo.title}</h1>
             <h2 className="description">{this.props.photo.description}</h2>
           </div>
