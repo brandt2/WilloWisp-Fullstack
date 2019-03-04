@@ -18,10 +18,8 @@ class PhotoIndex extends React.Component {
     });
 
     return (
-      <div>
-        <ul>
-          {photos}
-        </ul>
+      <div className="photos-index-container">
+        {photos}
       </div>
     );
   }

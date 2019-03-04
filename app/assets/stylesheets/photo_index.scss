@@ -4,28 +4,30 @@ body {
 
 .photos-index-container {
   width: 1080px;
-  display: flex;
   margin-right: auto;
   margin-left: auto;
-  // justify-content: center;
-  // align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .photos-index-div {
-  flex: 50%;
-  // display: flex;
-  // justify-content: space-around;
+  padding-top: 26px;
+  position: relative;
 }
 
-.photos-index {
-
-}
-
-.photos-index > li {
+.photo-index-title {
+  position: absolute;
+  bottom: 0;
 }
 
 .photo-image {
-  height: 360px;
-  width: 360px;
+  height: 256px;
+  width: 256px;
 }
 
+.photo-index-title:hover {
+}
+
+.photo-image:hover {
+}
