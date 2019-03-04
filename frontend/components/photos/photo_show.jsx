@@ -32,13 +32,12 @@ class PhotoShow extends React.Component {
   // }
 
   render () {
-    // let prev = this.props.photo.id;
-    // if (prev - 1 > 0) {
+    // let prev = this.props.photoId;
+    // if ((prev > Object.keys(this.props.users)[0]) && prev !== Object.keys(this.props.users)[0]) {
     //   prev -= 1;
-    //   prev;
     // }
 
-    // let next = this.props.photo.id;
+    // let next = this.props.photoId;
     // if (next < this.props.totalImages){
     //   next += 1;
     //   next;
@@ -52,9 +51,9 @@ class PhotoShow extends React.Component {
       <div>
         <div className="photo-show-image-div">
           <div className="back-to-index">
-            <Link to="/photos"><i class="fas fa-arrow-left"></i> Back to index</Link>
-            {/* <Link to={`/photos/${prev}`}><i class="fas fa-arrow-left"></i> back 1 image</Link>
-            <Link to={`/photos/${next}`}><i class="fas fa-arrow-left"></i> move up image</Link> */}
+            <Link to="/photos"><i className="fas fa-arrow-left"></i> Back to index</Link>
+            {/* <Link to={`/photos/${prev}`}><i class="fas fa-arrow-left"></i> back 1 image</Link> */}
+            {/* <Link to={`/photos/${next}`}><i class="fas fa-arrow-left"></i> move up image</Link> */}
           </div>
           <div className="photo-image-container">
             <img className="photo-show-image" src={this.props.photo.photoUrl} alt="" />
@@ -63,8 +62,9 @@ class PhotoShow extends React.Component {
         <div className="photo-info">
           <div className="photo-info-section">
             {edit}
-            <h1 className="title">{this.props.photo.title}</h1>
-            <h2 className="description">{this.props.photo.description}</h2>
+            <h1 className="user">By {this.props.users[this.props.photo.owner_id].username}</h1>
+            <h2 className="title">{this.props.photo.title}</h2>
+            <h3 className="description">{this.props.photo.description}</h3>
           </div>
         </div>
       </div>
