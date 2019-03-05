@@ -15,7 +15,6 @@
   width: 232px;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
   padding: 10px;
   background: rgb(37, 37, 37);
 }
@@ -71,6 +70,10 @@ input[type='file'] {
   cursor: pointer;
 }
 
+.preview-image-div {
+  height: 600px;
+}
+
 .preview-image {
-  z-index: 1;
+  height: 100%;
 }

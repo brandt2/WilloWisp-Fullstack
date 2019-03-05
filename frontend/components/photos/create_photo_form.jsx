@@ -88,18 +88,24 @@ class CreatePhotoForm extends React.Component{
     </div>) : null;
 
     const buttonButton = this.state.buttonForm ? (
-    <div className="upload-photo-photo">
-      <div className="fake-button">
-        Choose photos to upload
-      <input type="file"
-        className="choose-file"
-        onChange={this.handleFile}
-      />
-      </div>
+      <div className="upload-photo-photo">
+        <div className="fake-button">
+          Choose photos to upload
+        <input type="file"
+          className="choose-file"
+          onChange={this.handleFile}
+        />
+        </div>
 
-    </div>) : null;
+      </div>) : (
+        <div className="upload-photo-photo">
+          <div className="preview-image-div">
+            <img className="preview-image" src={this.state.photoUrl} /> 
+          </div>
+        </div>
+      );
 
-    const preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl} /> : null;
+    // const preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl} /> : null;
     return (
       <div className="upload-photo-div">
         <form className="upload-photo-form">
@@ -108,9 +114,9 @@ class CreatePhotoForm extends React.Component{
 
           {buttonButton}
 
-          <div className="upload-photo-photo">
+          {/* <div className="upload-photo-photo">
             {preview}
-          </div>
+          </div> */}
 
             {/* <button onClick={this.handleSubmit}>Upload photo</button> */}
         </form>

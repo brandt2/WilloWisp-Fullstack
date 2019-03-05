@@ -73,7 +73,9 @@ class EditPhotoForm extends React.Component{
               className="choose-file"
               onChange={this.handleFile}
             /> */}
-            <img className="preview-image" src={this.props.photo.photoUrl} />
+            <div className="preview-img-div">
+              <img className="preview-image" src={this.props.photo.photoUrl} />
+            </div>
           </div>
 
         </form>
