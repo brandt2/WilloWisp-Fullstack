@@ -5,7 +5,7 @@ class PhotoIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos();
-    this.props.fetchUsers();
+    // this.props.fetchUsers();
   }
 
   render () {
