@@ -20,6 +20,10 @@ import Root from './components/root';
 //   updatePhoto,
 //   deletePhoto
 // } from './actions/photos_actions';
+import {
+  createAlbum,
+  deleteAlbum
+} from './util/albums_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
