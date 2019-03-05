@@ -36,21 +36,40 @@
   margin-bottom: 10px;
 }
 
-.user {
+.title-edit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
   font-size: 20px;
   margin-top: 12px;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-.title {
+.description {
   font-size: 16px;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-.description {
-  font-size: 14px;
-  margin-bottom: 10px;
-  font-weight: 400;
+.edit-button-div {
+  display: flex;
+  align-items: center;
 }
+
+.edit-button {
+  background: #0063dc;
+  color: white;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+// .description {
+//   font-size: 14px;
+//   margin-bottom: 10px;
+//   font-weight: 400;
+// }

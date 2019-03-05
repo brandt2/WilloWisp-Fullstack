@@ -8,6 +8,13 @@ class PhotoIndex extends React.Component {
     // this.props.fetchUsers();
   }
 
+  // componentDidUpdate(prevProps){
+  //   if (uthis.props.photos !== prevProps.photos) {
+  //     this.props.fetchPhotos();
+  //     this.props.fetchUsers();
+  //   }
+  // }
+
   render () {
     let photos = this.props.photos.map(photo => {
       return (
@@ -15,6 +22,7 @@ class PhotoIndex extends React.Component {
           key={photo.id}
           photo={photo}
           users={this.props.users}
+          // fetchAllUsers = {this.props.fetchUsers}
         />
       )
     });

@@ -2,7 +2,7 @@ class Api::PhotosController < ApplicationController
   before_action :require_login, only: [:create, :update, :destroy]
 
   def index
-    @photos = Photo.all
+    @photos = Photo.includes(:user).all
   end
 
   def show

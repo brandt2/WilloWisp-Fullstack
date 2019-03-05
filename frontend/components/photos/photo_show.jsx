@@ -45,7 +45,10 @@ class PhotoShow extends React.Component {
 
     if (this.props.photo === undefined) return null;
     // needed double equal signs not triple
-    const edit = this.props.photo.owner_id == this.props.currentUserId ? <Link to={`/photos/${this.props.photo.id}/edit`}><i className="fas fa-edit"></i> Edit</Link> : null;
+
+    const edit = this.props.photo.owner_id == this.props.currentUserId ? (
+      <Link className="edit-button" to={`/photos/${this.props.photo.id}/edit`}><i className="fas fa-edit"></i> Edit Photo</Link>
+    ) : null;
 
     return (
       <div>
@@ -61,10 +64,15 @@ class PhotoShow extends React.Component {
         </div>
         <div className="photo-info">
           <div className="photo-info-section">
-            {edit}
-            <h1 className="user">By {this.props.users[this.props.photo.owner_id].username}</h1>
-            <h2 className="title">{this.props.photo.title}</h2>
-            <h3 className="description">{this.props.photo.description}</h3>
+            {/* <h1 className="user">By {this.props.users[this.props.photo.owner_id].username}</h1> */}
+            {/* {edit} */}
+            <div className="title-edit">
+              <h1 className="title">{this.props.photo.title}</h1>
+              <div className="edit-button-div">
+                {edit}
+              </div>
+            </div>
+            <h2 className="description">{this.props.photo.description}</h2>
           </div>
         </div>
       </div>
