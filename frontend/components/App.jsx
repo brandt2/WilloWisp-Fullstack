@@ -10,6 +10,7 @@ import EditPhotoFormContainer from './photos/edit_photo_form_container';
 import SecondNavBar from './second_nav_bar/second_nav_bar_container';
 import AlbumIndexContainer from './albums/album_index_container';
 import AlbumShowContainer from './albums/album_show_container';
+import CreateAlbumFormContainer from './albums/create_album_form_container';
 import Splash from './splash/splash';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -26,6 +27,7 @@ const App = () => (
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route exact path="/photos" component={PhotoIndexContainer} />
       <Route exact path="/albums" component={AlbumIndexContainer} />
+      <Route exact path="/albums/new" component={CreateAlbumFormContainer} />
       <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
     </Switch>
   </div>
