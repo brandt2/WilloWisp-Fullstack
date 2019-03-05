@@ -21,7 +21,7 @@ class PhotoIndex extends React.Component {
         < PhotoIndexItem
           key={photo.id}
           photo={photo}
-          users={this.props.users}
+          // users={this.props.users}
           // fetchAllUsers = {this.props.fetchUsers}
         />
       )

@@ -20,10 +20,13 @@ import Root from './components/root';
 //   updatePhoto,
 //   deletePhoto
 // } from './actions/photos_actions';
-import {
-  createAlbum,
-  deleteAlbum
-} from './util/albums_api_util';
+// import {
+//   createAlbum,
+//   deleteAlbum,
+//   updateAlbum,
+//   fetchAlbum,
+//   fetchAlbums,
+// } from './actions/albums_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -45,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  // window.createAlbum = createAlbum;
+  // window.updateAlbum = updateAlbum;
+  // window.deleteAlbum = deleteAlbum;
+  // window.fetchAlbums = fetchAlbums;
+  // window.fetchAlbum = fetchAlbum;
   // window.login = login;
   // window.createPhoto = createPhoto;
   // window.fetchPhoto = fetchPhoto;
