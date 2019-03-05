@@ -15,5 +15,4 @@ const photosErrorsReducer = (oldstate = [], action) => {
   }
 }
 
-
 export default photosErrorsReducer;
