@@ -43,9 +43,7 @@ export const fetchPhotos = () => dispatch => {
 export const fetchPhoto = (id) => dispatch => {
   return (
     PhotoAPIUtil.fetchPhoto(id)
-      .then( (response) => {
-        dispatch(receivePhoto(response.photo))
-      })
+      .then( (photo) => dispatch(receivePhoto(photo)))
       .fail( error => dispatch(receiveErrors(error.responseJSON)))
   )
 }
