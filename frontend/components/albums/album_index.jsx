@@ -20,8 +20,15 @@ class AlbumIndex extends React.Component {
 
     return (
       <div>
-        <Link to="/albums/new">Create new Album</Link>
-        {albums}
+
+        <div className="albums-index-container">
+          <div className="create-album-div">
+            <Link to="/albums/new"><i className="far fa-plus-square"></i> New album</Link>
+          </div>
+          <div className="album-outer-div">
+            {albums}
+          </div>
+        </div>
       </div>
     )
 

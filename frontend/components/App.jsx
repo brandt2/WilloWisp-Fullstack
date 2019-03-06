@@ -20,6 +20,7 @@ const App = () => (
     <Route path="/" component={NavBarContainer} />
     <Route exact path ="/" component={Splash} />
     <Route path="/photos" component={SecondNavBar} />
+    <Route path="/albums" component={SecondNavBar} />
     <ProtectedRoute path="/users/:userId" component={UserContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -28,9 +29,9 @@ const App = () => (
       <Route exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route exact path="/photos" component={PhotoIndexContainer} />
-      <Route exact path="/albums" component={AlbumIndexContainer} />
       <Route exact path="/albums/new" component={CreateAlbumFormContainer} />
       <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
+      <Route exact path="/albums" component={AlbumIndexContainer} />
     </Switch>
   </div>
 );
