@@ -7,7 +7,7 @@ export default (props) => {
     <div>
       <div className="user-section">
         <div className="user-div">
-          <h1 className="currentuser-username">{props.currentUser.username}</h1>
+          <h1 className="currentuser-username">Welcome, {props.currentUser.username}</h1>
         </div>
       </div>
 
