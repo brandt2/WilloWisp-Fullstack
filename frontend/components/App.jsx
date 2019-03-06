@@ -12,6 +12,7 @@ import AlbumIndexContainer from './albums/album_index_container';
 import AlbumShowContainer from './albums/album_show_container';
 import CreateAlbumFormContainer from './albums/create_album_form_container';
 import Splash from './splash/splash';
+import UserContainer from './user/user_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
     <Route path="/" component={NavBarContainer} />
     <Route exact path ="/" component={Splash} />
     <Route path="/photos" component={SecondNavBar} />
+    <ProtectedRoute path="/users/:userId" component={UserContainer} />
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <Switch>

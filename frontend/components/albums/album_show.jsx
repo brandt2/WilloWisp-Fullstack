@@ -31,7 +31,6 @@ class AlbumShow extends React.Component {
     if (this.props.album === undefined) return null;
 
     let photo = this.props.album.photos.map (photo => {
-      // debugger
         return (
           <img src={photo.photoUrl} alt="" />
         )
