@@ -17,14 +17,12 @@ class Api::AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     @album.user_id = current_user.id
-    something = params[:album][:photo_ids].split(",")
-    result = []
-    something.each do |photo_id|
-      result << photo_id.to_i
-    end
-    @album.photo_ids = result
-    debugger
-    if @album.save
+    photo_ids = params[:album][:photo_ids].split(",")
+    # debugger
+    if photo_ids && !photo_ids.empty? && @album.save
+      photo_ids.each do |id|
+        PhotoAlbum.create(album_id: @album.id, photo_id: id.to_i)
+      end
       render :show
     else
       render json: @album.errors.full_messages, status: 422

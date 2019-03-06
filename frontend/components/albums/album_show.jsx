@@ -10,7 +10,8 @@ class AlbumShow extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchAlbum(this.props.albumId)
+    this.props.fetchAlbum(this.props.albumId);
+    // this.props.fetchPhotos()
   }
 
   componentDidUpdate(prevProps){
@@ -29,10 +30,18 @@ class AlbumShow extends React.Component {
 
     if (this.props.album === undefined) return null;
 
+    let photo = this.props.album.photos.map (photo => {
+      // debugger
+        return (
+          <img src={photo.photoUrl} alt="" />
+        )
+    })
+
     return (
       <div>
         <h1>{this.props.album.title}</h1>
         <h1>{this.props.album.description}</h1>
+        {photo}
         <Link to="/albums">Back to the albums</Link>
         <button onClick={this.handleDelete}>Blow up this album</button>
       </div>
