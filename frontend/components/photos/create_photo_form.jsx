@@ -77,12 +77,19 @@ class CreatePhotoForm extends React.Component{
         placeholder="Add a title"
       />
 
-      <input type="text"
+      {/* <input type="text"
         className="create-photo-description"
         value={this.state.description}
         onChange={this.handleInput('description')}
         placeholder="Add a description"
-      /> 
+      /> */}
+
+      <textarea
+        className="create-photo-description"
+        value={this.state.description}
+        onChange={this.handleInput('description')}
+        placeholder="Add a description"
+      ></textarea>
 
       <button className="upload-buttons" onClick={this.handleSubmit}>Upload photo</button>
     </div>) : null;
