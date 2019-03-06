@@ -1,0 +1,13 @@
+.checkerbox {
+  display: flex;
+  // flex-direction: row;
+}
+
+.click-me {
+  height: 100px;
+  width: 100px;
+}
+
+.click-me.selected {
+  border: 2px solid red;
+}

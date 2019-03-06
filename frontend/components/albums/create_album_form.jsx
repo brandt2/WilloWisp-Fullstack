@@ -12,6 +12,10 @@ class CreateAlbumForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchPhotos();
+  }
+
   handleInput(type){
     return (e) => {
       this.setState({ [type]: e.currentTarget.value})
@@ -19,6 +23,7 @@ class CreateAlbumForm extends React.Component {
   }
 
   handleSubmit(e){
+    debugger
     e.preventDefault();
     const album = Object.assign({}, this.state);
     this.props.createAlbum(album)
@@ -38,6 +43,19 @@ class CreateAlbumForm extends React.Component {
   }
 
   render (){
+    
+    let photos = this.props.photos.map(photo => {
+      if (photo.owner_id == this.props.currentUserId) {
+        return(
+          <div className="checkboxes">
+            <input type="checkbox" id={photo.id} name="photos" value={photo}/>
+            <label for={photo.id}><img className="click-me" src={photo.photoUrl} alt="" /></label>
+          </div>
+          // <li key={photo.id}><img className="photo-show-image" src={photo.photoUrl} alt="" /></li>
+        )
+      }
+    })
+
     return (
       <form>
         {this.renderErrors()}
@@ -52,6 +70,10 @@ class CreateAlbumForm extends React.Component {
           onChange={this.handleInput('description')}
           placeholder="Add a description"
         /> 
+
+        <div className="checkerbox">
+          {photos}
+        </div>
 
         <button onClick={this.handleSubmit}>Create Album</button>
       </form>
