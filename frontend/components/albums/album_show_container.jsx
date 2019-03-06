@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import { fetchAlbum, deleteAlbum } from '../../actions/albums_actions';
-import { fetchPhotos } from '../../actions/photos_actions';
 import AlbumShow from './album_show';
 
 const mapStateToProps = (state, ownProps) => {
+  let currentUser = state.entities.users[state.session.currentUserId];
   return ({
     album: state.entities.albums[ownProps.match.params.albumId],
     albumId: ownProps.match.params.albumId,
-    photos: Object.values(state.entities.photos)
+    photos: Object.values(state.entities.photos),
+    currentUser: currentUser,
   });
 };
 
@@ -15,7 +16,6 @@ const mapDispatchToProps = dispatch => {
   return ({
     fetchAlbum: (id) => dispatch(fetchAlbum(id)),
     deleteAlbum: (id) => dispatch(deleteAlbum(id)),
-    // fetchPhotos: () => dispatch(fetchPhotos())
   });
 };
 

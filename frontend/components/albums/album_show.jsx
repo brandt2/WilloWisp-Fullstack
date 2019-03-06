@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { deleteAlbum } from '../../actions/albums_actions';
 
 class AlbumShow extends React.Component {
   constructor(props){
@@ -32,17 +31,31 @@ class AlbumShow extends React.Component {
 
     let photo = this.props.album.photos.map (photo => {
         return (
-          <img src={photo.photoUrl} alt="" />
+          <Link to={`/photos/${photo.id}`}><img src={photo.photoUrl} alt="" /></Link>
         )
     })
 
     return (
-      <div>
-        <h1>{this.props.album.title}</h1>
-        <h1>{this.props.album.description}</h1>
-        {photo}
-        <Link to="/albums">Back to the albums</Link>
-        <button onClick={this.handleDelete}>Blow up this album</button>
+      <div className="outer-most-show-div">
+        <div className="back-to-album-index">
+          <Link to="/albums"><i className="fas fa-arrow-left"></i> Back to albums list</Link>
+        </div>
+        <div className="album-div">
+          <div className="back-image-div">
+            <img src={this.props.album.photos[0].photoUrl} alt="" width="100%"/>
+          </div>
+          <div className="album-info">
+            <h1>{this.props.album.title}</h1>
+            <h2>{this.props.album.description}</h2>
+          </div>
+          <div className="album-username">
+            <h3>By: {this.props.currentUser.username}</h3>
+          </div>
+        </div>
+        <div>
+          {photo}
+        </div>
+        {/* <button onClick={this.handleDelete}>Blow up this album</button> */}
       </div>
     )
   }
