@@ -55,12 +55,22 @@ body {
   color: white;
 }
 
+.navbar-you {
+  color: white;
+  font-size: 16px;
+}
+
+.you-you {
+  display: flex;
+  align-items: center;
+}
+
 .navbar-logo {
   font-size: 28px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-  line-height: 64px;
   color: rgb(255, 255, 255);
+  margin-right: 40px;
 }
 
 .header-list {
