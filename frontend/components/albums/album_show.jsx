@@ -31,7 +31,7 @@ class AlbumShow extends React.Component {
 
     let photo = this.props.album.photos.map (photo => {
         return (
-          <Link to={`/photos/${photo.id}`}><img src={photo.photoUrl} alt="" /></Link>
+          <Link key={photo.id} to={`/photos/${photo.id}`}><img src={photo.photoUrl} alt="" /></Link>
         )
     })
 
@@ -49,7 +49,7 @@ class AlbumShow extends React.Component {
             <h2>{this.props.album.description}</h2>
           </div>
           <div className="album-username">
-            <h3>By: {this.props.currentUser.username}</h3>
+            <h3>By: {this.props.album.user.username}</h3>
           </div>
         </div>
         <div>

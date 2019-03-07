@@ -3,12 +3,10 @@ import { fetchAlbum, deleteAlbum } from '../../actions/albums_actions';
 import AlbumShow from './album_show';
 
 const mapStateToProps = (state, ownProps) => {
-  let currentUser = state.entities.users[state.session.currentUserId];
   return ({
     album: state.entities.albums[ownProps.match.params.albumId],
     albumId: ownProps.match.params.albumId,
     photos: Object.values(state.entities.photos),
-    currentUser: currentUser,
   });
 };
 
