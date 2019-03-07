@@ -25,12 +25,12 @@ const App = () => (
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <Switch>
-      <Route exact path="/photos/new" component={CreatePhotoFormContainer} />
-      <Route exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
+      <ProtectedRoute exact path="/photos/new" component={CreatePhotoFormContainer} />
+      <ProtectedRoute exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route exact path="/photos" component={PhotoIndexContainer} />
-      <Route exact path="/albums/new" component={CreateAlbumFormContainer} />
-      <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
+      <ProtectedRoute exact path="/albums/new" component={CreateAlbumFormContainer} />
+      <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
       <Route exact path="/albums" component={AlbumIndexContainer} />
     </Switch>
   </div>
