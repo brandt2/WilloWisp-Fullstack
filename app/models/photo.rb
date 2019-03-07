@@ -30,6 +30,11 @@ class Photo < ApplicationRecord
     through: :photo_albums,
     source: :album
 
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :photo_id,
+    class_name: "Comment"
+
   def ensure_photo
     unless self.image.attached?
       errors[:image] << "must be attached"

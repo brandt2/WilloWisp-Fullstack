@@ -18,7 +18,6 @@ class Api::AlbumsController < ApplicationController
     @album = Album.new(album_params)
     @album.user_id = current_user.id
     photo_ids = params[:album][:photo_ids].split(",")
-    # debugger
     if photo_ids && !photo_ids.empty? && @album.save
       photo_ids.each do |id|
         PhotoAlbum.create(album_id: @album.id, photo_id: id.to_i)
