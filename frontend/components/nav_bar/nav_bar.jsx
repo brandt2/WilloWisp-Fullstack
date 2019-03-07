@@ -20,8 +20,10 @@ export default ({ currentUser, logout }) => {
     </ul>
   );
 
+  let navBarColor = currentUser ? ("header1") : ("header");
+
   return (
-    <header className="header">
+    <header className={navBarColor}>
       <nav className="header-navbar">
       
         <h1 className="navbar-logo"><Link to="/">Will-o'-Wisp</Link></h1>

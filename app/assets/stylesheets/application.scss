@@ -29,7 +29,18 @@ body {
   left: 0;
   width: 100%;
   position: fixed;
-  background: rgba(0,0,0,.25);
+  background: rgba(0,0,0,.20);
+  height: 64px;
+  padding: 0 24px;
+  z-index: 2;
+}
+
+.header1 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.90);
   height: 64px;
   padding: 0 24px;
   z-index: 2;

@@ -8,13 +8,17 @@ body {
   margin-left: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .photos-index-div {
   margin-top: 11px;
   position: relative;
   color: transparent;
+  // overflow: auto;
+  // height: 256px;
+  // width: 256px;
 }
 
 .photo-index-title {

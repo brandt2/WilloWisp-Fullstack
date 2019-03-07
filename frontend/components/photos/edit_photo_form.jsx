@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 class EditPhotoForm extends React.Component{
   constructor(props){
@@ -71,6 +72,9 @@ class EditPhotoForm extends React.Component{
             ></textarea>
 
             <button className="upload-buttons" onClick={this.handleSubmit}>Edit photo</button>
+
+            <Link className="upload-buttons" to={`/photos/${this.props.photo.id}`}>Back to photo</Link>
+
           </div>
           
           <div className="upload-photo-photo">
