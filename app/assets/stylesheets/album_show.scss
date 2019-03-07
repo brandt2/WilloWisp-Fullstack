@@ -56,3 +56,41 @@
   font-size: 14px;
   font-weight: 300;
 }
+
+.album-show-outer-div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.albums-show-div {
+  margin-top: 10px;
+  position: relative;
+  color: transparent;
+}
+
+.album-show-image {
+  width: 190px;
+  height: 190px;
+}
+
+.album-show-title {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+}
+
+.album-show-username {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.albums-show-div:hover {
+  transition: 0.7s;
+  color: white;
+  background-color:#000;
+  opacity:0.95;
+}
