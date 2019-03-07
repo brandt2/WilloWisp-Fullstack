@@ -81,7 +81,7 @@ class CreateAlbumForm extends React.Component {
   }
 
   render (){
-    console.log("in render: ", this.state);
+    // console.log("in render: ", this.state);
     let photos = this.props.photos.map(photo => {
       if (photo.owner_id == this.props.currentUserId) {
         return(

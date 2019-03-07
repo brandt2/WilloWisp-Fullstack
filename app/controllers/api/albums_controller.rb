@@ -25,7 +25,8 @@ class Api::AlbumsController < ApplicationController
       end
       render :show
     else
-      render json: @album.errors.full_messages, status: 422
+      # render json: @album.errors.full_messages, status: 422
+      render json: ["Please enter a title and select photos."], status: 422
     end
   end
 
