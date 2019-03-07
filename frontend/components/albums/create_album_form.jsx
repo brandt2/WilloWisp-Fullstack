@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CreateAlbumForm extends React.Component {
   constructor(props){
@@ -69,7 +70,7 @@ class CreateAlbumForm extends React.Component {
 
   renderErrors(){
     return (
-      <ul>
+      <ul className="login-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -85,7 +86,7 @@ class CreateAlbumForm extends React.Component {
       if (photo.owner_id == this.props.currentUserId) {
         return(
           <div className="checkboxes" key={photo.id}>
-            <label >
+            <label key={photo.id}>
               <input onClick={this.handleCheck} type="checkbox" id={photo.id} name="photos" value={photo}/>
               <img className="click-me" src={photo.photoUrl} alt="" />
             </label>
@@ -98,24 +99,33 @@ class CreateAlbumForm extends React.Component {
 
     return (
       <form>
-        {this.renderErrors()}
-        <input type="text"
-          value={this.state.title}
-          onChange={this.handleInput('title')}
-          placeholder="Add a title"
-        />
+        <div className="create-album-form-div">
+          <div className="create-album-field">
+            {this.renderErrors()}
+            <input type="text"
+              className="create-album-title"
+              value={this.state.title}
+              onChange={this.handleInput('title')}
+              placeholder="Add a title"
+            />
 
-        <textarea
-          value={this.state.description}
-          onChange={this.handleInput('description')}
-          placeholder="Add a description"
-        ></textarea>
+            <textarea
+              className="create-album-description"
+              value={this.state.description}
+              onChange={this.handleInput('description')}
+              placeholder="Add a description"
+            ></textarea>
 
-        <div className="checkerbox">
-          {photos}
+            <button className="upload-buttons" onClick={this.handleSubmit}>Create Album</button>
+
+            <Link className="upload-buttons" to="/albums">Back to albums</Link>
+          </div>
+
+          <div className="checkerbox">
+            {photos}
+          </div>
+
         </div>
-
-        <button onClick={this.handleSubmit}>Create Album</button>
       </form>
     )
   }

@@ -68,31 +68,32 @@ class CreatePhotoForm extends React.Component{
 
   render() {
 
-    const menuForm = this.state.showForm ? (<div className="upload-photo-field">
-      {this.renderErrors()}
-      <input type="text"
-        className="create-photo-title"
-        value={this.state.title}
-        onChange={this.handleInput('title')}
-        placeholder="Add a title"
-      />
+    const menuForm = this.state.showForm ? (
+      <div className="upload-photo-field">
+        {this.renderErrors()}
+        <input type="text"
+          className="create-photo-title"
+          value={this.state.title}
+          onChange={this.handleInput('title')}
+          placeholder="Add a title"
+        />
 
-      {/* <input type="text"
-        className="create-photo-description"
-        value={this.state.description}
-        onChange={this.handleInput('description')}
-        placeholder="Add a description"
-      /> */}
+        {/* <input type="text"
+          className="create-photo-description"
+          value={this.state.description}
+          onChange={this.handleInput('description')}
+          placeholder="Add a description"
+        /> */}
 
-      <textarea
-        className="create-photo-description"
-        value={this.state.description}
-        onChange={this.handleInput('description')}
-        placeholder="Add a description"
-      ></textarea>
+        <textarea
+          className="create-photo-description"
+          value={this.state.description}
+          onChange={this.handleInput('description')}
+          placeholder="Add a description"
+        ></textarea>
 
-      <button className="upload-buttons" onClick={this.handleSubmit}>Upload photo</button>
-    </div>) : null;
+        <button className="upload-buttons" onClick={this.handleSubmit}>Upload photo</button>
+      </div>) : null;
 
     const buttonButton = this.state.buttonForm ? (
       <div className="upload-photo-photo">

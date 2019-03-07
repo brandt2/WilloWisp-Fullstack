@@ -1,6 +1,40 @@
-.checkerbox {
+.create-album-form-div {
   display: flex;
-  // flex-direction: row;
+  justify-content: space-between;
+  background: white;
+  height: 100vh;
+}
+
+.create-album-field {
+  width: 232px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.create-album-title {
+  background: #ffffd3;
+  border: 1px solid #e9e9ae;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.create-album-description {
+  background: #ffffd3;
+  border: 1px solid #e9e9ae;
+  margin-bottom: 20px;
+  height: 200px;
+}
+
+
+.checkerbox {
+  border: 1px solid rgb(206, 206, 206);
+  background: rgb(240, 240, 240);
+  margin: 10px;
+  width: 1000px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .click-me {
@@ -8,6 +42,14 @@
   width: 100px;
 }
 
-.click-me.selected {
-  border: 2px solid red;
+input[type="checkbox"] {
+  display: none;
+}
+
+.click-me {
+  margin: 6px;
+}
+
+input[type="checkbox"]:checked ~ .click-me {
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.6);
 }
