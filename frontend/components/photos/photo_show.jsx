@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class PhotoShow extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.goBack = this.goBack.bind(this);
+  }
 
   componentDidMount(){
     this.props.fetchPhoto(this.props.photoId);
@@ -30,6 +35,9 @@ class PhotoShow extends React.Component {
   //   let photoId = nextProps.match.params.photoId
   //   nextProps.fetchPhoto(photoId)
   // }
+  goBack(){
+    this.props.history.goBack();
+  }
 
   render () {
     // let prev = this.props.photoId;
@@ -54,7 +62,8 @@ class PhotoShow extends React.Component {
       <div>
         <div className="photo-show-image-div">
           <div className="back-to-index">
-            <Link to="/photos"><i className="fas fa-arrow-left"></i> Back to index</Link>
+            <button className="back-button" onClick={this.goBack}><i className="fas fa-arrow-left"></i> Back</button>
+            {/* <Link to="/photos"><i className="fas fa-arrow-left"></i> Back to index</Link> */}
             {/* <Link to={`/photos/${prev}`}><i class="fas fa-arrow-left"></i> back 1 image</Link> */}
             {/* <Link to={`/photos/${next}`}><i class="fas fa-arrow-left"></i> move up image</Link> */}
           </div>
