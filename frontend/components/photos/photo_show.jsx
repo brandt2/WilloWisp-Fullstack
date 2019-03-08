@@ -74,18 +74,23 @@ class PhotoShow extends React.Component {
           </div>
         </div>
         <div className="photo-info">
-          <div className="photo-info-section">
-            <div className="title-edit">
-              <h1 className="user">By {this.props.photo.user.username}</h1>
-              <div className="edit-button-div">
-                {edit}
+          <div>
+            <div className="photo-info-section">
+              <div className="title-edit">
+                <h1 className="user">By {this.props.photo.user.username}</h1>
+                <div className="edit-button-div">
+                  {edit}
+                </div>
               </div>
+              <h2 className="title">{this.props.photo.title}</h2>
+              <h3 className="description">{this.props.photo.description}</h3>
             </div>
-            <h2 className="title">{this.props.photo.title}</h2>
-            <h3 className="description">{this.props.photo.description}</h3>
+            <CommentIndexContainer photoId={this.props.photo.id}/>
           </div>
-          <CommentIndexContainer photoId={this.props.photo.id}/>
-          <TagIndexContainer photoId={this.props.photo.id}/>
+
+          <div className="tag-info">
+            <TagIndexContainer photoId={this.props.photo.id}/>
+          </div>
         </div>
 
       </div>

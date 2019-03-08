@@ -20,14 +20,15 @@ class TagIndex extends React.Component {
     });
 
     return (
-      <div>
-        <div>
-          <CreateTagContainer photoId={this.props.photoId}/>
-        </div>
-        
-        <div>
+      <div className="tag-section">
+        <h1 className="tag-title">Tags</h1>
+        <div className="all-the-tags">
           {tags}
         </div>
+        <div className="add-tag-section">
+          <CreateTagContainer photoId={this.props.photoId}/>
+        </div>
+
       </div>
     );
   }

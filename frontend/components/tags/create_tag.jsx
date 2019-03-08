@@ -56,7 +56,7 @@ class CreateTag extends React.Component {
         </div>
 
         <div>
-          <button onClick={this.handleSubmit}>Tag</button>
+          <button className="tag-button" onClick={this.handleSubmit}>Add tag</button>
         </div>
       </div>
     )
