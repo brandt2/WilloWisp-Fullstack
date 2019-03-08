@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentIndexContainer from '../comments/comment_index_container';
+import TagIndexContainer from '../tags/tag_index_container';
 
 class PhotoShow extends React.Component {
   constructor(props){
@@ -84,6 +85,7 @@ class PhotoShow extends React.Component {
             <h3 className="description">{this.props.photo.description}</h3>
           </div>
           <CommentIndexContainer photoId={this.props.photo.id}/>
+          <TagIndexContainer photoId={this.props.photo.id}/>
         </div>
 
       </div>
