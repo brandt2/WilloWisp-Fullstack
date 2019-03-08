@@ -16,24 +16,77 @@ The project was designed and built within a 10-day timeframe. However, I plan to
 * Users can add tags directly to the photo on the photo's show page.
 
 ### Photo Show Page
-The photo page has both the comments and tags section
+The photo page displays the picture that was uploaded along with the associated comments and tags. On the same page comments and tags can be directly added to the photo and appear right away.
 
-![Photo Show Page](https://github.com/brandt2/WilloWisp-Fullstack/blob/master/readme/photo_show_page.png)
+![Photo Show Page](https://github.com/brandt2/WilloWisp-Fullstack/blob/master/readme/photo_show.gif)
 
-* Ruby version
+This was accomplished by creating separate components only responsible for handling comments and tags but importing all of them to the photo show page. This also keeps the code DRY while also avoiding rendering the same page multiple times. It also allows for easier debugging as all the parts are in their own folders so locating the bug is easier.
 
-* System dependencies
+```jsx
+render () {
+    return (
+      <div>
+        <div className="photo-show-image-div">
+          <div className="back-to-index">
+            <button className="back-button" onClick={this.goBack}><i className="fas fa-arrow-left"></i> Back</button>
+          </div>
+          <div className="photo-image-container">
+            <img className="photo-show-image" src={this.props.photo.photoUrl} alt="" />
+          </div>
+        </div>
+        <div className="photo-info">
+          <div>
+            <div className="photo-info-section">
+              <div className="title-edit">
+                <h1 className="user">By {this.props.photo.user.username}</h1>
+                <div className="edit-button-div">
+                  {edit}
+                </div>
+              </div>
+              <h2 className="title">{this.props.photo.title}</h2>
+              <h3 className="description">{this.props.photo.description}</h3>
+            </div>
+            <CommentIndexContainer photoId={this.props.photo.id}/>
+          </div>
 
-* Configuration
+          <div className="tag-info">
+            <TagIndexContainer photoId={this.props.photo.id}/>
+          </div>
+        </div>
 
-* Database creation
+      </div>
+    )
+  }
+```
 
-* Database initialization
+### Creating Albums
+Logged in users can create albums with the pictures they own. On the create album page all the pictures that belong to the user will show up on the right side and the user is allowed to select multiple pictures that they want in the album.
 
-* How to run the test suite
+![Create Album Page](https://github.com/brandt2/WilloWisp-Fullstack/blob/master/readme/create_album.gif)
 
-* Services (job queues, cache servers, search engines, etc.)
+There were challenges that came with allowing the user to select multiple pictures they want to add to an album. One of the challenge that I faced was that my state kept on changing from an array to an integer every time more than one photo was selected. To get through this problem I created a copy of the state and only modified the copy until the user hits the create album button, which will then set the state to the copy. Another major challenge that came with this part was that I had to keep track of when a user clicks on a photo multiple times. To handle this I created a conditional that checked if the array that is going to hold all the photo ids already has the photo id. If the id is already in the array it will remove it, otherwise it will add it to the array.
 
-* Deployment instructions
+```jsx
+  handleCheck(e){
+    let copy = this.state.photosId.slice(0);
+    let photoId = Number(e.currentTarget.id);
+    if (copy.includes(photoId)){
+      copy.splice(copy.indexOf(photoId), 1);
+    } else {
+      copy.push(photoId);
+    }
+    this.setState({
+      photosId: copy
+    });
+  }
+```
 
-* ...
+## Project Design
+
+Will-o'-Wisp was designed with the thought of user experience as its primary goal. Considering the 10-day timeframe, the core features of the website was prioritized in order to establish solid features that do not put off users. The code was also arranged into different files and folders in order to keep them manageable. This will allow me to go back into the code in the future and continue to add more features without getting lost.
+
+## Possible Future Features
+
+In the future I would like to implement:
+* user's photos and albums
+* search bar
