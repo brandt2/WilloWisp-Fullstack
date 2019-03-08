@@ -90,3 +90,4 @@ Will-o'-Wisp was designed with the thought of user experience as its primary goa
 In the future I would like to implement:
 * user's photos and albums
 * search bar
+* arrows on photo's show page
