@@ -47,10 +47,9 @@ class Signup extends React.Component {
     return (
       <div className="signup-session-form">
         <form>
-        <h2>Sign Up</h2>
-        <br/>
+          <div className="logo"></div>
+          <h2>Sign Up</h2>
           {this.renderErrors()}
-          <br/>
           <div className="signup-name">
             <input type="text"
               value={this.state.fname}
@@ -89,6 +88,7 @@ class Signup extends React.Component {
             />
 
           <button onClick={this.handleSubmit}>Sign Up</button>
+          <p>Already have an account? <a className="signup-link" href="/#/login">Log in.</a></p>
         </form>
       </div>
     );

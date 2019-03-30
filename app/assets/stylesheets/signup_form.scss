@@ -17,7 +17,6 @@
 }
 
 .signup-session-form > form {
-  height: 420px;
   width: 300px;
   background: rgb(255, 255, 255);
   display: flex;
@@ -33,6 +32,7 @@
 .signup-session-form > form > h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .signup-name {
@@ -84,11 +84,15 @@ input[type="password"], input[type="text"], input[type="email"] {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .signup-errors {
   text-align: center;
   color: red;
   font-family: 'Montserrat', sans-serif;
+}
+
+.signup-link {
+  color: blue;
 }
