@@ -8,7 +8,7 @@ export default () => (
       <br/>
       <h3 className="splash-description">Join the Will-o'-Wisp community, home to billions of photos.</h3>
       <br/>
-      <Link to="/signup" className="sign-up">Sign Up</Link>
+      <Link to="/photos" className="sign-up">View Photos</Link>
     </div>
   </div>
 )
