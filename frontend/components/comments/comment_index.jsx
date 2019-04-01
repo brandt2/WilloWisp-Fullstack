@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CommentIndexItem from './comment_index_item';
 import CreateCommentContainer from './create_comment_container';
 
@@ -9,7 +10,7 @@ class CommentIndex extends React.Component {
   }
 
   render () {
-    let comments = this.props.comments.map(comment => {
+    const comments = this.props.comments.map(comment => {
       return (
         <CommentIndexItem
           key={comment.id}
@@ -18,6 +19,9 @@ class CommentIndex extends React.Component {
         />
       )
     });
+    const addComments = this.props.currentUserId ? (
+      <CreateCommentContainer photoId={this.props.photoId} />
+    ) : <p className="add-comment">Please <Link className="go-to-login" to="/login">log in</Link> to leave a comment</p>;
 
     return (
       <div className="comments-section">
@@ -25,7 +29,7 @@ class CommentIndex extends React.Component {
           {comments}
         </div>
         <div>
-          <CreateCommentContainer photoId={this.props.photoId}/>
+          {addComments}
         </div>
       </div>
     );

@@ -4,7 +4,7 @@ import CommentIndex from './comment_index';
 
 const mapStateToProps = state => {
   let comments = Object.values(state.entities.comments);
-  let currentUserId = state.entities.currentUserId;
+  let currentUserId = state.session.currentUserId;
   return ({
     currentUserId: currentUserId,
     comments: comments
