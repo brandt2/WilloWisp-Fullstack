@@ -74,7 +74,7 @@ class PhotoShow extends React.Component {
           </div>
         </div>
         <div className="photo-info">
-          <div>
+          <div className="right-border">
             <div className="photo-info-section">
               <div className="title-edit">
                 <h1 className="user">By {this.props.photo.user.username}</h1>
