@@ -19,6 +19,7 @@ class CommentIndex extends React.Component {
         />
       )
     });
+    
     const addComments = this.props.currentUserId ? (
       <CreateCommentContainer photoId={this.props.photoId} />
     ) : <p className="add-comment">Please <Link className="go-to-login" to="/login">log in</Link> to leave a comment</p>;
