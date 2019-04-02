@@ -18,7 +18,7 @@ The project was designed and built within a 10-day timeframe. However, I plan to
 ### Photo Show Page
 The photo page displays the picture that was uploaded along with the associated comments and tags. On the same page comments and tags can be directly added to the photo and appear right away.
 
-![Photo Show Page](https://github.com/brandt2/WilloWisp-Fullstack/blob/master/readme/photo_show.gif)
+![Photo Show Page](https://github.com/brandt2/WilloWisp-Fullstack/blob/master/readme/add-comment.gif)
 
 This was accomplished by creating separate components only responsible for handling comments and tags but importing all of them to the photo show page. This also keeps the code DRY while also avoiding rendering the same page multiple times. It also allows for easier debugging as all the parts are in their own folders so locating the bug is easier.
 
