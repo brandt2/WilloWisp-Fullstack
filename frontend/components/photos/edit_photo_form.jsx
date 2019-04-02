@@ -11,7 +11,8 @@ class EditPhotoForm extends React.Component{
       description: this.props.photo.description
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -32,6 +33,12 @@ class EditPhotoForm extends React.Component{
       .then( () => this.props.history.push(`/photos/${photo.id}`))
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deletePhoto(this.props.photoId)
+      .then(() => this.props.history.push("/photos"))
+  }
+
   renderErrors(){
     return (
       <ul>
@@ -49,6 +56,8 @@ class EditPhotoForm extends React.Component{
       <div className="upload-photo-div">
         <form className="upload-photo-form">
           <div className="upload-photo-field">
+            <Link className="back-photo-button" to={`/photos/${this.props.photo.id}`}><i className="fas fa-arrow-left"></i> Back to photo</Link>
+
             {this.renderErrors()}
             <input type="text"
               className="create-photo-title"
@@ -73,7 +82,7 @@ class EditPhotoForm extends React.Component{
 
             <button className="upload-buttons" onClick={this.handleSubmit}>Edit photo</button>
 
-            <Link className="upload-buttons" to={`/photos/${this.props.photo.id}`}>Back to photo</Link>
+            <button className="delete-buttons" onClick={this.handleDelete}>Delete</button>
 
           </div>
           
