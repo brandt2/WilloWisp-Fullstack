@@ -26,26 +26,10 @@ This was accomplished by creating separate components only responsible for handl
 render () {
     return (
       <div>
-        <div className="photo-show-image-div">
-          <div className="back-to-index">
-            <button className="back-button" onClick={this.goBack}><i className="fas fa-arrow-left"></i> Back</button>
-          </div>
-          <div className="photo-image-container">
-            <img className="photo-show-image" src={this.props.photo.photoUrl} alt="" />
-          </div>
-        </div>
+        {photo}
         <div className="photo-info">
-          <div>
-            <div className="photo-info-section">
-              <div className="title-edit">
-                <h1 className="user">By {this.props.photo.user.username}</h1>
-                <div className="edit-button-div">
-                  {edit}
-                </div>
-              </div>
-              <h2 className="title">{this.props.photo.title}</h2>
-              <h3 className="description">{this.props.photo.description}</h3>
-            </div>
+          <div className="right-border">
+            {photoInfo}
             <CommentIndexContainer photoId={this.props.photo.id}/>
           </div>
 
