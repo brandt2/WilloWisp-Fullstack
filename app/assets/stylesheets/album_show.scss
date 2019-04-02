@@ -67,7 +67,6 @@
 .albums-show-div {
   margin-top: 10px;
   position: relative;
-  color: transparent;
 }
 
 .album-show-image {
@@ -75,23 +74,26 @@
   height: 190px;
 }
 
-.album-show-title {
+.album-index-detail {
   position: absolute;
-  bottom: 30px;
+  color: white;
+  bottom: 0px;
   left: 10px;
+  line-height: 5px;
+  opacity: 0;
+  transition: 0.7s;
 }
 
 .album-show-username {
-  position: absolute;
-  bottom: 0;
-  left: 10px;
   font-size: 12px;
   font-weight: 400;
 }
 
-.albums-show-div:hover {
-  transition: 0.7s;
-  color: white;
-  background-color:#000;
-  opacity:0.95;
+.albums-show-div:hover .album-index-detail {
+  opacity: 1;
+}
+
+.albums-show-div:hover .the-box {
+  opacity: 1;
+  transition: 0.5s;
 }
