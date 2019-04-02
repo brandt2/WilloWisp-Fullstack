@@ -47,7 +47,7 @@ class CreateTag extends React.Component {
     return (
       <div>
         <div>
-          {this.renderErrors}
+          {this.renderErrors()}
           <input
             type="text" 
             value={this.state.tagName} 

@@ -38,7 +38,11 @@
   margin-left: auto;
   display: flex;
   justify-content: space-between;
+}
 
+.right-border {
+  padding-right: 30px;
+  border-right: 1px solid rgb(207, 214, 217);
 }
 
 .photo-info-section {

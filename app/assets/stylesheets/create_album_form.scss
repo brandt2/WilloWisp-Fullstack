@@ -1,8 +1,8 @@
 .create-album-form-div {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background: white;
-  height: 100vh;
+  // height: 100vh;
 }
 
 .create-album-field {
@@ -24,8 +24,8 @@
   border: 1px solid #e9e9ae;
   margin-bottom: 20px;
   height: 200px;
+  padding: 5px;
 }
-
 
 .checkerbox {
   border: 1px solid rgb(206, 206, 206);
@@ -34,20 +34,18 @@
   width: 1000px;
   display: flex;
   justify-content: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
 }
 
 .click-me {
   height: 100px;
   width: 100px;
+  margin: 10px 0 0 10px;
 }
 
 input[type="checkbox"] {
   display: none;
-}
-
-.click-me {
-  margin: 6px;
 }
 
 input[type="checkbox"]:checked ~ .click-me {

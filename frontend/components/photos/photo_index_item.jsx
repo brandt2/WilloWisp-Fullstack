@@ -5,8 +5,10 @@ const PhotoIndexItem = props => {
 
   return (
     <div className="photos-index-div">
-      <h1 className="photo-index-title">{props.photo.title}</h1>
-      <h3 className="photo-index-username">By {props.photo.user.username}</h3>
+      <div className="photo-index-detail">
+        <h1 className="photo-index-title">{props.photo.title}</h1>
+        <h3 className="photo-index-username">By {props.photo.user.username}</h3>
+      </div>
       <Link to={`/photos/${props.photo.id}`}><img className="photo-image" src={props.photo.photoUrl} alt="" /></Link>
     </div>
   );

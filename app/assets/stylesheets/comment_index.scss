@@ -40,6 +40,7 @@
   background: white;
   border: 1px solid rgb(159, 164, 167);
   height: 100px;
+  padding: 5px;
 }
 
 .comment-outer-div:hover {
@@ -65,4 +66,13 @@
 .comment-button:hover {
   transition: 0.3s;
   opacity: 0.8;
+}
+
+.add-comment {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.go-to-login {
+  color: blue;
 }
