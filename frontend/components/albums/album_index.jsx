@@ -18,9 +18,10 @@ class AlbumIndex extends React.Component {
       )
     })
 
+    if (this.props.albums === undefined) return null;
+
     return (
       <div>
-
         <div className="albums-index-container">
           <div className="create-album-div">
             <Link to="/albums/new"><i className="far fa-plus-square"></i> New album</Link>
