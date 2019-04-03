@@ -33,12 +33,14 @@ class Photo < ApplicationRecord
   has_many :comments,
     primary_key: :id,
     foreign_key: :photo_id,
-    class_name: "Comment"
+    class_name: "Comment",
+    dependent: :destroy
 
   has_many :tags,
     primary_key: :id,
     foreign_key: :photo_id,
-    class_name: "Tag"
+    class_name: "Tag",
+    dependent: :destroy
 
   def ensure_photo
     unless self.image.attached?
