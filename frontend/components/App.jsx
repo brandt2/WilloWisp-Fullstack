@@ -14,6 +14,7 @@ import CreateAlbumFormContainer from './albums/create_album_form_container';
 import Splash from './splash/splash';
 import Footer from './footer/footer';
 import UserContainer from './user/user_container';
+import UserPhotosContainer from './user/user_photos_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -27,6 +28,7 @@ const App = () => (
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
     <Switch>
+      <ProtectedRoute path="/users/:userId/photos" component={UserPhotosContainer}/>
       <ProtectedRoute exact path="/photos/new" component={CreatePhotoFormContainer} />
       <ProtectedRoute exact path="/photos/:photoId/edit" component={EditPhotoFormContainer} />
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />

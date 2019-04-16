@@ -23,7 +23,7 @@ export default ({ currentUser, logout }) => {
 
   const youUser = currentUser ? (
     <h2 className="navbar-you">
-      <Link to={`/users/${currentUser.id}`}>You</Link>
+      <Link to={`/users/${currentUser.id}/photos`}>You</Link>
     </h2>
   ) : (null);
 
