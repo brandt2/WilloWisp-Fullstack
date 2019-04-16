@@ -15,7 +15,7 @@ class UserPhotos extends React.Component {
       photo.owner_id === this.props.currentUser.id
     );
 
-    let userphotos = photos.map (photo => {
+    let userPhotos = photos.map (photo => {
       return (
         <div key={photo.id} className='albums-show-div'>
           <Link to={`/photos/${photo.id}`}><div className="the-box"></div></Link>
@@ -33,7 +33,7 @@ class UserPhotos extends React.Component {
     return (
       <div className="user-photos-index">
         <div className='album-show-outer-div'>
-          {userphotos}
+          {userPhotos}
         </div>
       </div>
     )
